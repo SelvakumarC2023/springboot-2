@@ -1,0 +1,228 @@
+.profile-container {
+  min-height: calc(100vh - 80px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-card {
+  max-width: 600px;
+  width: 100%;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  background: white;
+  margin-bottom: 1rem;
+  transition: all 0.3s ease;
+}
+
+.detail-row:hover {
+  border-color: #3498db;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+}
+
+.detail-label {
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.detail-value {
+  color: #2c3e50;
+  font-size: 1rem;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.profile-actions button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.edit-button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+}
+
+.edit-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #2980b9, #3498db);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.edit-button::before,
+.back-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.6s ease, height 0.6s ease;
+}
+
+.edit-button:hover::before,
+.back-button:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+
+
+.back-button {
+  background: linear-gradient(135deg, #95a5a6, #7f8c8d);
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.back-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #7f8c8d, #95a5a6);
+  box-shadow: 0 5px 15px rgba(127, 140, 141, 0.4);
+}
+
+.profile-edit-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  color: #2c3e50;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 0.75rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #2c3e50;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.save-button {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  color: white;
+}
+
+.save-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #27ae60, #2ecc71);
+  box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+}
+
+.cancel-button {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+}
+
+.cancel-button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+}
+
+@media (max-width: 640px) {
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .detail-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .detail-label {
+    font-size: 0.8rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px; /* Prevents zoom on mobile */
+  }
+}

@@ -1,0 +1,329 @@
+/* Modern Budget Summary Styles */
+.budget-summary {
+  padding: 2rem;
+  background: linear-gradient(145deg, #ffffff, #f0f4f8);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.budget-summary:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Controls Section */
+.summary-controls {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.year-selector,
+.month-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.year-selector select,
+.month-selector select,
+.date-filter select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  background-color: white;
+  font-size: 1rem;
+  margin-left: 0.5rem;
+}
+
+.date-filter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.date-filter label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.date-filter input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.year-selector select:hover,
+.month-selector select:hover,
+.date-filter select:hover {
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+/* Summary Sections */
+.summary-section {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.summary-section:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.download-pdf {
+  padding: 0.5rem 1rem;
+  background-color: #4299e1;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.download-pdf:hover {
+  background-color: #3182ce;
+}
+
+.download-pdf i {
+  font-size: 1rem;
+}
+
+.summary-section h2 {
+  color: #2d3748;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+.summary-details {
+  display: grid;
+  gap: 1rem;
+}
+
+.summary-details p {
+  font-size: 1.1rem;
+  color: #4a5568;
+  padding: 0.8rem;
+  background: #f7fafc;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.summary-details p:hover {
+  background: #edf2f7;
+}
+
+.balance {
+  font-weight: 600;
+  font-size: 1.2rem !important;
+}
+
+.balance.positive {
+  color: #38a169 !important;
+  background: #f0fff4 !important;
+}
+
+.balance.negative {
+  color: #e53e3e !important;
+  background: #fff5f5 !important;
+}
+
+/* Monthly Breakdown */
+.monthly-breakdown {
+  margin-top: 2rem;
+  border-top: 2px solid #edf2f7;
+  padding-top: 2rem;
+}
+
+.monthly-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.monthly-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid #edf2f7;
+  position: relative;
+  overflow: hidden;
+}
+
+.monthly-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #4299e1, #48bb78);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.monthly-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.monthly-item:hover::before {
+  opacity: 1;
+}
+
+.monthly-item strong {
+  display: block;
+  color: #2d3748;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.monthly-item div {
+  color: #4a5568;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+}
+
+/* Transactions List */
+.transactions-list {
+  margin-top: 2rem;
+}
+
+.transactions-list h3 {
+  color: #2d3748;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+}
+
+.transactions-list ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.transaction {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1.2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.transaction:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.transaction.income {
+  border-left: 4px solid #48bb78;
+}
+
+.transaction.expense {
+  border-left: 4px solid #f56565;
+}
+
+.transaction-date {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.transaction-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.category {
+  color: #2d3748;
+  font-weight: 500;
+}
+
+.description {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.transaction-amount {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+.transaction-actions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.edit-btn {
+  background: #ebf8ff;
+  color: #3182ce;
+}
+
+.edit-btn:hover {
+  background: #bee3f8;
+}
+
+.delete-btn {
+  background: #fff5f5;
+  color: #e53e3e;
+}
+
+.delete-btn:hover {
+  background: #fed7d7;
+}
+
+.no-transactions {
+  text-align: center;
+  color: #718096;
+  padding: 2rem;
+  background: #f7fafc;
+  border-radius: 12px;
+  font-size: 1.1rem;
+}
